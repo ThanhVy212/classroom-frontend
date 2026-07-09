@@ -1,5 +1,5 @@
 import {createDataProvider, CreateDataProviderOptions} from "@refinedev/rest";
-import {ListResponse} from "@/types";
+import {GetOneResponse, ListResponse} from "@/types";
 import {BACKEND_BASE_URL} from "@/constants";
 import {CreateResponse, HttpError} from "@refinedev/core";
 
@@ -81,6 +81,16 @@ const options: CreateDataProviderOptions={
       return json.data ?? [];
     },
   },
+
+  getOne: {
+    getEndpoint: ({resource, id}) => `${resource}/${id}`,
+
+    mapResponse: async (response) => {
+      const json: GetOneResponse = await response.clone().json();
+
+      return json.data ?? [];
+    }
+  }
 }
 
 const {dataProvider} = createDataProvider(BACKEND_BASE_URL, options);
