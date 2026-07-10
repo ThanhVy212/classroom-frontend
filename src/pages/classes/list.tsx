@@ -99,7 +99,7 @@ const ClassesList = () => {
             },
             {
                 id: 'details',
-                size: 140,
+                size: 100,
                 header: () => <p className="column-title">Details</p>,
                 cell: ({ row }) => <ShowButton resource="classes" recordItemId={row.original.id} variant="outline" size="sm">View</ShowButton>
             }

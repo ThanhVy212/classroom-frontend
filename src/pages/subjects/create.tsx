@@ -179,7 +179,7 @@ const SubjectsCreate  = () => {
                                             <FormLabel>Description</FormLabel>
                                             <FormControl>
                                                 <Textarea
-                                                    placeholder="Brief description about the class"
+                                                    placeholder="Brief description about the subject"
                                                     {...field}
                                                 />
                                             </FormControl>
@@ -197,7 +197,7 @@ const SubjectsCreate  = () => {
                                             <Loader2 className="inline-block ml-2 animate-spin" />
                                         </div>
                                     ) : (
-                                        "Create Class"
+                                        "Create Subject"
                                     )}
                                 </Button>
                             </form>
