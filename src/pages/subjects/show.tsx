@@ -132,7 +132,7 @@ const SubjectsShow = () => {
                 id: 'details',
                 size: 100,
                 header: () => <p className="column-title">Details</p>,
-                cell: ({ row }) => <ShowButton resource="faculty" recordItemId={row.original.id} variant="outline" size="sm">View</ShowButton>
+                cell: ({ row }) => <ShowButton resource="users" recordItemId={row.original.id} variant="outline" size="sm">View</ShowButton>
             }
         ], []),
         refineCoreProps:{
