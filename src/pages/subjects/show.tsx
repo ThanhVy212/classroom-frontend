@@ -78,7 +78,7 @@ const SubjectsShow = () => {
             },
             {
                 id: 'details',
-                size: 140,
+                size: 100,
                 header: () => <p className="column-title">Details</p>,
                 cell: ({ row }) => <ShowButton resource="classes" recordItemId={row.original.id} variant="outline" size="sm">View</ShowButton>
             }
@@ -124,13 +124,13 @@ const SubjectsShow = () => {
             {
                 id: 'email',
                 accessorKey: 'email',
-                size: 100,
+                size: 200,
                 header: ()=> <p className="column-title ml-2">Email</p>,
                 cell: ({getValue})=> <Badge>{getValue<string>()}</Badge>
             },
             {
                 id: 'details',
-                size: 140,
+                size: 100,
                 header: () => <p className="column-title">Details</p>,
                 cell: ({ row }) => <ShowButton resource="faculty" recordItemId={row.original.id} variant="outline" size="sm">View</ShowButton>
             }
@@ -177,7 +177,7 @@ const SubjectsShow = () => {
 
     return (
         <ShowView className="class-view class-show space-y-6">
-            <ShowViewHeader resource="subjects" title="Subjects Details" />
+            <ShowViewHeader resource="subjects" title="Subject Details" />
 
             <Card className="details-card">
                 <div className="details-header">

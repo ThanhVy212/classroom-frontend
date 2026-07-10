@@ -66,7 +66,7 @@ const SubjectsList = () => {
             },
             {
                 id: 'details',
-                size: 140,
+                size: 100,
                 header: () => <p className="column-title">Details</p>,
                 cell: ({ row }) => <ShowButton resource="subjects" recordItemId={row.original.id} variant="outline" size="sm">View</ShowButton>
             }
