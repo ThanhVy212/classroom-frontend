@@ -68,7 +68,7 @@ const DepartmentsShow = () => {
     if (query.isLoading || query.isError || !departmentDetails) {
         return (
             <ShowView className="class-view">
-                <ShowViewHeader resource="subjects" title="Subject Details" />
+                <ShowViewHeader resource="departments" title="Department Details" />
                 <p className="text-sm text-muted-foreground">
                     {query.isLoading
                         ? "Loading department details..."
@@ -84,7 +84,7 @@ const DepartmentsShow = () => {
 
     return (
         <ShowView className="class-view class-show space-y-6">
-            <ShowViewHeader resource="subjects" title="Deparment Details" />
+            <ShowViewHeader resource="departments" title="Department Details" />
 
             <Card className="details-card">
                 <div className="details-header">

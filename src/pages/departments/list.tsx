@@ -69,10 +69,10 @@ const DepartmentsList = () => {
     return (
         <ListView>
             <Breadcrumb/>
-            <h1 className="page-title">Classes</h1>
+            <h1 className="page-title">Departments</h1>
 
             <div className="intro-row">
-                <p>Manage your classes, subjects, and teachers.</p>
+                <p>Manage your departments and their subjects.</p>
 
                 <div className="actions-row">
                     <div className="search-field">

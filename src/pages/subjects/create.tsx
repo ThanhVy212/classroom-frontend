@@ -197,7 +197,7 @@ const SubjectsCreate  = () => {
                                             <Loader2 className="inline-block ml-2 animate-spin" />
                                         </div>
                                     ) : (
-                                        "Create Subect"
+                                        "Create Subject"
                                     )}
                                 </Button>
                             </form>

@@ -12,6 +12,7 @@ import {Input} from "@/components/ui/input.tsx";
 import {Textarea} from "@/components/ui/textarea.tsx";
 import {Loader2} from "lucide-react";
 import {z} from "zod";
+import {toast} from "sonner";
 
 const DepartmentsCreate = () => {
     const back = useBack();
@@ -41,6 +42,8 @@ const DepartmentsCreate = () => {
             await onFinish(values);
         } catch (error) {
             console.error("Error creating department:", error);
+
+            toast.error("Failed to create department. Please try again.");
         }
     };
 
@@ -79,7 +82,7 @@ const DepartmentsCreate = () => {
                                             </FormLabel>
                                             <FormControl>
                                                 <Input
-                                                    placeholder="Introduction to Biology - Section A"
+                                                    placeholder="Department of Biology"
                                                     {...field}
                                                 />
                                             </FormControl>
