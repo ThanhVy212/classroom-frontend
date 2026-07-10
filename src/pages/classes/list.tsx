@@ -52,7 +52,7 @@ const ClassesList = () => {
                 size: 80,
                 header: () => <p className="column-title ml-2">Banner</p>,
                 cell: ({ getValue }) => (
-                    <div className="flex items-center justify-center ml-2">
+                    <div className="flex items-left justify-left ml-2">
                         <img
                             src={getValue<string>() || '/placeholder-class.png'}
                             alt="Class Banner"

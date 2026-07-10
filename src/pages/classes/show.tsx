@@ -7,6 +7,7 @@ import {Separator} from "@/components/ui/separator.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {AdvancedImage} from "@cloudinary/react"
 import {bannerPhoto} from "@/lib/cloudinary.ts";
+import {getTeacherPlaceholderUrl} from "@/lib/utils.ts";
 
 const ClassesShow = () => {
     const {query} = useShow<ClassDetails>({resource : 'classes'});
@@ -31,15 +32,8 @@ const ClassesShow = () => {
     }
 
     const teacherName = classDetails.teacher?.name ?? "unknown";
-    const teachersInitials =
-        teacherName
-            .split(' ')
-            .filter(Boolean)
-            .slice(0, 2)
-            .map((part) => part[0]?.toUpperCase())
-            .join('');
 
-    const placeholderUrl = `https://placehold.co/600x400?text=${encodeURIComponent(teachersInitials || 'NA')}`;
+    const placeholderUrl = getTeacherPlaceholderUrl(teacherName);
 
     const {name, description, status, capacity, bannerUrl, bannerCldPubId, subject, teacher, department, } = classDetails;
 
