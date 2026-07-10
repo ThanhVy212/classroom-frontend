@@ -25,7 +25,7 @@ import UploadWidget from "@/components/upload-widget.tsx";
 import {Subject, User} from "@/types";
 
 
-const Create = () => {
+const ClassesCreate = () => {
     const back = useBack();
 
     const {query: subjectsQuery} = useList<Subject>({
@@ -342,4 +342,4 @@ const Create = () => {
     );
 };
 
-export default Create;
+export default ClassesCreate;

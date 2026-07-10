@@ -24,23 +24,40 @@ const buildHttpError = async (response: Response) : Promise<HttpError> => {
 
 const options: CreateDataProviderOptions={
   getList: {
-    getEndpoint: ({resource}) => resource,
+    getEndpoint: ({ resource }) => resource,
 
-    buildQueryParams: async ({resource, pagination, filters}) => {
+    buildQueryParams: async ({ resource, pagination, filters }) => {
+      const params: Record<string, string | number> = {};
 
-      const page = pagination?.currentPage ?? 1;
-      const pageSize = pagination?.pageSize ?? 10;
+      if (pagination?.mode !== "off") {
+        const page = pagination?.currentPage ?? 1;
+        const pageSize = pagination?.pageSize ?? 10;
 
-      const params: Record<string, string|number> = {page, limit: pageSize};
+        params.page = page;
+        params.limit = pageSize;
+      }
 
       filters?.forEach((filter) => {
-        const field = 'field' in filter ? filter.field : '';
-
+        const field = "field" in filter ? filter.field : "";
         const value = String(filter.value);
 
-        if(resource === 'subjects') {
-          if (field === 'department') params.department = value;
-          if (field === 'name' || field === 'code') params.search = value;
+        if (field === "role") {
+          params.role = value;
+        }
+
+        if (resource === "departments") {
+          if (field === "name" || field === "code") params.search = value;
+        }
+
+        if (resource === "users") {
+          if (field === "search" || field === "name" || field === "email") {
+            params.search = value;
+          }
+        }
+
+        if (resource === "subjects") {
+          if (field === "department") params.department = value;
+          if (field === "name" || field === "code") params.search = value;
         }
 
         if (resource === "classes") {
@@ -48,7 +65,7 @@ const options: CreateDataProviderOptions={
           if (field === "subject") params.subject = value;
           if (field === "teacher") params.teacher = value;
         }
-      })
+      });
 
       return params;
     },

@@ -18,9 +18,10 @@ const SubjectsList = () => {
     const [selectedDepartment, setSelectedDepartment] = useState("all");
 
     const { query: departmentsQuery } = useList<Department>({
-        resource: 'subjects',
+        resource: 'departments',
         pagination: { pageSize: 100 }
     });
+
     const departments = departmentsQuery?.data?.data || [];
 
     const departmentFilters = selectedDepartment === "all" ? [] : [

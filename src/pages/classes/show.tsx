@@ -8,7 +8,7 @@ import {Button} from "@/components/ui/button.tsx";
 import {AdvancedImage} from "@cloudinary/react"
 import {bannerPhoto} from "@/lib/cloudinary.ts";
 
-const Show = () => {
+const ClassesShow = () => {
     const {query} = useShow<ClassDetails>({resource : 'classes'});
 
     const classDetails = query.data?.data;
@@ -117,4 +117,4 @@ const Show = () => {
         </ShowView>
     )
 }
-export default Show
+export default ClassesShow;
